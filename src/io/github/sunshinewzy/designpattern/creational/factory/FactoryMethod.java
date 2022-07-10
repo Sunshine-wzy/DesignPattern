@@ -6,26 +6,11 @@ public class FactoryMethod {
 		Application application = new ConcreteProductA();
 		Product product = application.createProduct();
 		
-		// 简单工厂
-//		Product product = SimpleFactory.createProduct("A");
-		
 		if(product != null) {
 			product.method1();
 		}
 	}
 	
-}
-
-class SimpleFactory {
-	public static Product createProduct(String type) {
-		if(type == null) return null;
-		
-		if(type.equals("A")) {
-			return new ProductA();
-		} else if(type.equals("B")) {
-			return new ProductB();
-		} else return null;
-	}
 }
 
 interface Product {
